@@ -55,6 +55,10 @@ img {
       color: $primary-color;
     }
   }
+
+  > div {
+    display: none;
+  }
 }
 
 // Landing

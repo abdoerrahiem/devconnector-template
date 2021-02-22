@@ -402,6 +402,10 @@ img {
   color: #17a2b8;
 }
 
+.navbar > div {
+  display: none;
+}
+
 .landing {
   position: relative;
   background: url("../img/showcase.jpg") no-repeat center center/cover;
@@ -602,18 +606,63 @@ img {
   .lead {
     font-size: 1rem;
   }
-  .navbar {
-    display: block;
-    text-align: center;
+  .navbar > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    cursor: pointer;
   }
   .navbar ul {
+    position: absolute;
+    top: 3.7rem;
+    background: #343a40;
+    left: 0;
+    width: 100%;
     text-align: center;
+    padding: 10px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: none;
   }
-  .navbar h1 {
-    margin-bottom: 1rem;
+  .navbar ul.show {
+    display: inline-block;
+  }
+  .navbar ul.hide {
+    display: none;
+  }
+  .navbar > div > span {
+    width: 26px;
+    height: 2px;
+    background-color: #f4f4f4;
+    margin-bottom: 5px;
+  }
+  .navbar > div.open > span {
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+    -webkit-transform-origin: 3px 1px;
+            transform-origin: 3px 1px;
+  }
+  .navbar > div.open > span:first-child {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .navbar > div.open > span:nth-child(2) {
+    opacity: 0;
+  }
+  .navbar > div.open > span:last-child {
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
   }
   .dash-buttons a {
     display: block;
